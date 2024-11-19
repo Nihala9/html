@@ -1,0 +1,47 @@
+<html>
+<head>
+   <title>str&math</title>
+</head>
+<body>
+   <h3>String Functions</h3>
+   <p id="strDemo"></p>
+   
+   <h3>Math Functions</h3>
+   <p id="mathDemo"></p>
+   
+   <script>
+       let str = "Hello, JavaScript!";
+       let str1 = " Let's learn more.";
+       let stringResult = "";
+     
+       stringResult += "Original string: " + str + "<br>";
+       stringResult += "Length of string: " + str.length + "<br>";
+       stringResult += "Uppercase: " + str.toUpperCase() + "<br>";
+       stringResult += "Lowercase: " + str.toLowerCase() + "<br>";
+       stringResult += "Substring(7,17): " + str.substring(7,17) + "<br>";
+       stringResult += "Replace 'JavaScript' with 'World': " + str.replace("JavaScript","World") + "<br>";
+       stringResult += "Concatenate with 'Let's learn more.': " + str.concat(str1) + "<br>";
+       stringResult += "Substring from index 0 to 4: " + str.substring(0, 5) + "<br>";
+       stringResult += "First index of 'Java': " + str.indexOf("Java") + "<br>";  
+       stringResult += "Last index of 'a': " + str.lastIndexOf("a") + "<br>";    
+       stringResult += "Character at index 7: " + str.charAt(7) + "<br>";
+     
+       document.getElementById("strDemo").innerHTML = stringResult;
+  
+       let mathResult = "";
+  
+       mathResult += "Math.PI: " + Math.PI + "<br>";
+       mathResult += "Math.round(4.7): " + Math.round(4.7) + "<br>";
+       mathResult += "Math.sqrt(16): " + Math.sqrt(16) + "<br>";
+       mathResult += "Math.pow(2, 3): " + Math.pow(2, 3) + "<br>";
+       mathResult += "Math.max(10, 20, 30): " + Math.max(10, 20, 30) + "<br>";
+       mathResult += "Math.min(10, 20, 30): " + Math.min(10, 20, 30) + "<br>";
+       mathResult += "Math.floor(4.7): " + Math.floor(4.7) + "<br>";  
+       mathResult += "Math.ceil(4.7): " + Math.ceil(4.7) + "<br>";    
+       mathResult += "Math.abs(-5): " + Math.abs(-5) + "<br>"; 
+       
+       document.getElementById("mathDemo").innerHTML = mathResult;
+    </script>
+</body>
+</html>
+
