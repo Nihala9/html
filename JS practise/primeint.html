@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>prime interval</title>
+</head>
+<body>
+      <h2>Prime Number in an Interval</h2>
+      <p id="result"></p>
+      
+      <script>
+           start = parseInt(prompt("Enter start of the interval :"));
+           end = parseInt(prompt("Enter end of the interval :"));
+          
+          primes = [];
+              
+           for(num = start; num <= end; num++){
+               if(num > 1) {
+                isPrime = true;
+          
+                 for(i=2; i<=Math.sqrt(num);i++) 
+                 {
+                 if(num % i == 0)
+                   {
+                   isPrime = false;
+                   break;
+                   }
+                 }
+                 
+                 if(isPrime) {
+                   primes.push(num)
+               }
+               }
+               }
+               
+               if(prime.length > 0) 
+                  {
+                    document.getElementById("result").innerHTML="Prime numbers between " +start+ "and" +end+ ":" +primes.join(",");
+                  }
+                  else
+                  {
+                  document.getElementById("result").innerHTML="No prime numbers found " +start+ "to" +end+ ".";
+                  }
+             
+              
+       </script>
+</body>
+</html>

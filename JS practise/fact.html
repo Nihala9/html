@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Factorial</title>
+</head>
+<body>
+      <h2>Factorial</h2>
+      <p id="result"></p>
+      
+      <script>
+           var num = parseInt(prompt("Enter a number:"));
+          
+          var fact = 1;
+          
+          if (num >= 0) {
+              for (var i = 1; i <= num; i++) {
+                  fact *= i;
+              }
+              document.getElementById("result").innerHTML = "Factorial of " + num + " is " + fact;
+          } else {
+              document.getElementById("result").innerHTML = "Factorial is not defined for negative numbers";
+          }
+       </script>
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>product</title>
+</head>
+<body>
+      <h2>Product of 5 numbers</h2>
+      <p id="result"></p>
+      
+      <script>
+           product = 1;
+          
+          for( i=1;i<=5;i++) {
+               num = parseInt(prompt("Enter number" + i + ":"));
+              
+              product *= num;
+          }
+          
+          document.getElementById("result").innerHTML = "The product of the 5 number is:" + product;
+       </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>sq</title>
+</head>
+<body>
+      <h2>Square root</h2>
+      <p id="result"></p>
+      
+      <script>
+           nums = parseFloat(prompt("Enter number to find its sq root:"));
+          
+           sqrt = Math.sqrt(nums);
+              
+           if(!isNaN(sqrt)){
+                  document.getElementById("result").innerHTML = "The square root of "  + nums + " is: " +sqrt;
+          } else {
+                document.getElementById("result").innerHTML = "Invalid";
+                }
+              
+       </script>
+</body>
+</html>

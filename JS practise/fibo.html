@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Fibo</title>
+</head>
+<body>
+      <h2>Fibonacci</h2>
+      <p id="result"></p>
+      
+      <script>
+           var terms = parseInt(prompt("Enter a number:"));
+          
+          var n1 = 0, n2 = 1, nexterm;
+          var seq = n1 + " " + n2 + " ";
+        
+              for (var i = 3; i <= terms; i++) {
+                  nexterm = n1 + n2;
+                  seq += nexterm + " ";
+                  n1 = n2;
+                  n2 = nexterm;
+              }
+              document.getElementById("result").innerHTML = seq;
+         
+       </script>
+</body>
+</html>
+
