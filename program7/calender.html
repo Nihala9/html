@@ -1,0 +1,59 @@
+<html>
+<head>
+   <title>Calendar</title>
+</head>
+<body><center>
+   <h2>Calendar</h2>
+   <label for="yr">Enter Year:</label>
+   <input type="number" id="yr" placeholder="eg.2024">
+   <button onclick="generatecal()">Generate Calendar</button>
+   
+   <div id="calender"></div>
+   
+   <script>
+       function generatecal() {
+          let yr = parseInt(document.getElementById("yr").value);
+          let cal = document.getElementById("calender");
+          cal.innerHTML = "";
+          
+          if(isNaN(yr) || yr <= 0) {
+             cal.innerHTML = "Please enter a valid year";
+             return;
+          }
+
+          let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+             
+          for(let month = 0; month < 12; month++) {
+                let days = new Date(yr, month + 1, 0).getDate();
+                let table = `<h3>${months[month]}</h3>
+                <table border="1">
+                  <tr>
+                     <th>Sun</th>
+                     <th>Mon</th>
+                     <th>Tue</th>
+                     <th>Wed</th>
+                     <th>Thu</th>
+                     <th>Fri</th>
+                     <th>Sat</th>
+                  </tr>
+                  <tr>`;
+
+                for(let i = 0; i < new Date(yr, month, 1).getDay(); i++) {
+                    table += "<td></td>";
+                }
+
+                for(let day = 1; day <= days; day++) {
+                    table += `<td>${day}</td>`;
+                    if((new Date(yr, month, day).getDay() + 1) % 7 === 0) {
+                        table += "</tr><tr>"; 
+                    }
+                }
+
+                table += "</tr></table><br>";
+                cal.innerHTML += table;
+          }
+       }
+   </script></center>
+</body>
+</html>
+
