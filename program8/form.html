@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Form</title>
+  </head>
+  <body>
+    <center>
+      <h2>Registration Form</h2><br>
+      <form id="form">
+        Name: <input type="text" id="name"><br><br>
+        Date of Birth: <input type="date" id="dob"><br><br>
+        Gender: 
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+        <br><br> 
+        Email: <input type="text" id="email"><br><br>
+        Password: <input type="password" id="pw"><br><br>
+        Confirm Password: <input type="password" id="cpw"><br><br>
+        Phone: <input type="text" id="ph"><br><br>
+        
+        <button type="button" onclick="validate()">Submit</button>
+      </form>
+      <p id="msg" style="color:red"></p>
+
+      <script>
+        function validate() {
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("pw").value;
+          let cp = document.getElementById("cpw").value;
+          let ph = document.getElementById("ph").value;
+          let dob = document.getElementById("dob").value;
+          let gender = document.querySelector('input[name="gender"]:checked');
+          let msg = document.getElementById("msg");
+
+          if (name === "" || email === "" || password === "" || cp === "" || ph === "" || dob === "" || !gender) {
+            msg.innerHTML = "All fields are required";
+            msg.style.color = "red";
+          }
+          else if (password !== cp) {
+            msg.innerHTML = "Passwords do not match";
+            msg.style.color = "blue";
+          } 
+          else if (!/^\d+$/.test(ph)) {
+            msg.innerHTML = "Phone number must contain only numbers";
+            msg.style.color = "purple";
+          } 
+          
+          else if (!validateEmail(email)) {
+            msg.innerHTML = "Please enter a valid email address";
+            msg.style.color = "orange";
+          } 
+          else {
+            msg.innerHTML = "Registration successful!";
+            msg.style.color = "green";
+          }
+        }
+
+        function validateEmail(email) {
+          const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          return emailPattern.test(email);
+        }
+      </script>
+    </center>
+  </body>
+</html>
+
