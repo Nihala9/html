@@ -1,0 +1,135 @@
+<html>
+<head>
+   <title>Online Exam</title>
+</head>
+<body>
+
+   <h2>Online Exam</h2>
+   <form id="exmForm">
+       <p>Register Number:
+       <input type="text" id="reg" placeholder="Enter your register number" required><br></p>
+   
+      <h3>Q 1: What is the capital of France?</h3>
+      <input type="radio" name="q1" value="Paris">Paris<br>
+      <input type="radio" name="q1" value="London">London<br>
+      <input type="radio" name="q1" value="Berlin">Berlin<br>
+
+      <h3>Q 2: What is 5 + 5?</h3>
+      <input type="radio" name="q2" value="10">10<br>
+      <input type="radio" name="q2" value="15">15<br>
+      <input type="radio" name="q2" value="20">20<br>
+
+      <h3>Q 3: Who wrote 'Hamlet'?</h3>
+      <input type="radio" name="q3" value="Shakespeare">Shakespeare<br>
+      <input type="radio" name="q3" value="Dickens">Dickens<br>
+      <input type="radio" name="q3" value="Austen">Austen<br>
+      
+      <h3>Q 4: What is the largest planet in our solar system?</h3>
+      <input type="radio" name="q4" value="Jupiter">Jupiter<br>
+      <input type="radio" name="q4" value="Saturn">Saturn<br>
+      <input type="radio" name="q4" value="Earth">Earth<br>
+      
+      <h3>Q 5: Which is the longest river in the world?</h3>
+      <input type="radio" name="q5" value="Nile">Nile<br>
+      <input type="radio" name="q5" value="Amazon">Amazon<br>
+      <input type="radio" name="q5" value="Yangtze">Yangtze<br>
+
+      <h3>Q 6: What is the chemical symbol for gold?</h3>
+      <input type="radio" name="q6" value="Au">Au<br>
+      <input type="radio" name="q6" value="Ag">Ag<br>
+      <input type="radio" name="q6" value="Pb">Pb<br>
+      
+      <h3>Q 7: Who painted the Mona Lisa?</h3>
+      <input type="radio" name="q7" value="Da Vinci">Da Vinci<br>
+      <input type="radio" name="q7" value="Van Gogh">Van Gogh<br>
+      <input type="radio" name="q7" value="Picasso">Picasso<br>
+      
+      <h3>Q 8: What is the boiling point of water?</h3>
+      <input type="radio" name="q8" value="100">100°C<br>
+      <input type="radio" name="q8" value="90">90°C<br>
+      <input type="radio" name="q8" value="120">120°C<br>
+
+      <h3>Q 9: Who discovered gravity?</h3>
+      <input type="radio" name="q9" value="Newton">Newton<br>
+      <input type="radio" name="q9" value="Einstein">Einstein<br>
+      <input type="radio" name="q9" value="Galileo">Galileo<br>
+      
+      <h3>Q 10: What is the speed of light?</h3>
+      <input type="radio" name="q10" value="3e8">3 x 10^8 m/s<br>
+      <input type="radio" name="q10" value="3e6">3 x 10^6 m/s<br>
+      <input type="radio" name="q10" value="3e7">3 x 10^7 m/s<br>
+
+      <br>
+      <button type="button" onclick="submitExm()">Submit</button>
+      <button type="reset">Reset</button>
+   </form>
+   
+   <h3 id="result"></h3>
+   
+   <script>
+       function submitExm() {
+           let score = 0;
+           
+           let regNum = document.getElementById("reg").value;
+           
+           if (regNum === "") {
+               alert("Please enter your register number.");
+               return;
+           }
+           
+           let q1 = document.querySelector('input[name="q1"]:checked');
+           if (q1 && q1.value === "Paris") {
+               score++;
+           }
+           
+           let q2 = document.querySelector('input[name="q2"]:checked');
+           if (q2 && q2.value === "10") {
+               score++;
+           }
+           
+           let q3 = document.querySelector('input[name="q3"]:checked');
+           if (q3 && q3.value === "Shakespeare") {
+               score++;
+           }
+           
+           let q4 = document.querySelector('input[name="q4"]:checked');
+           if (q4 && q4.value === "Jupiter") {
+               score++;
+           }
+
+           let q5 = document.querySelector('input[name="q5"]:checked');
+           if (q5 && q5.value === "Nile") {
+               score++;
+           }
+
+           let q6 = document.querySelector('input[name="q6"]:checked');
+           if (q6 && q6.value === "Au") {
+               score++;
+           }
+
+           let q7 = document.querySelector('input[name="q7"]:checked');
+           if (q7 && q7.value === "Da Vinci") {
+               score++;
+           }
+
+           let q8 = document.querySelector('input[name="q8"]:checked');
+           if (q8 && q8.value === "100") {
+               score++;
+           }
+
+           let q9 = document.querySelector('input[name="q9"]:checked');
+           if (q9 && q9.value === "Newton") {
+               score++;
+           }
+
+           let q10 = document.querySelector('input[name="q10"]:checked');
+           if (q10 && q10.value === "3e8") {
+               score++;
+           }
+           
+           alert( "Your score: " + score + "/10");
+       }
+   </script>
+</body>
+</html>
+
